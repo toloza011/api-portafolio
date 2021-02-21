@@ -7,7 +7,7 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const bd = require('./src/config/mongoose/conexion');
 const apiRoutes = require('./src/routes/index');
-
+const morgan = require('morgan')
 
 
 //Instanciar el servidor con express
@@ -15,6 +15,7 @@ const app = express();
 
 
 //middlewares
+app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 

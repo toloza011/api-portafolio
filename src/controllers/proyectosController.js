@@ -4,7 +4,7 @@ const Proyecto = require('../models/proyecto');
 
 
 //Retornar todos los proyectos
-exports.getProyectos = (req,res)=> {
+exports.getProyectos =async (req,res)=> {
   /*   Proyecto.find(function(err,proyectos){
          res.json(proyectos);
     })
@@ -14,9 +14,8 @@ exports.getProyectos = (req,res)=> {
         })
     }); 
  */
-    Proyecto.find(function(err, proyectos) {
+   await Proyecto.find(function(err, proyectos) {
             if(err) res.send(500, err.message);
-
                 res.status(200).json(proyectos);
            });
 }
