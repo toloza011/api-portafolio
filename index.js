@@ -34,7 +34,7 @@ app.use('/api',apiRoutes);
 app.use(router);
 
 //Arrancar servidor
-app.listen(port,host);
+app.listen(process.env.PORT,host);
 console.log("Servidor corriendo en el puerto: "+port);
 
 
