@@ -5,14 +5,20 @@ const Proyecto = require('../models/proyecto');
 
 //Retornar todos los proyectos
 exports.getProyectos = (req,res)=> {
-    Proyecto.find().then(proyectos => {
-         res.send(proyectos);
+  /*   Proyecto.find(function(err,proyectos){
+         res.json(proyectos);
     })
     .catch(err => {
         res.status(500).json({
             error: err.message
         })
     }); 
+ */
+    Proyecto.find(function(err, proyectos) {
+            if(err) res.send(500, err.message);
+
+                res.status(200).json(proyectos);
+           });
 }
 
 //Agregar nuevo proyecto 
