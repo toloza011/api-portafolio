@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 
 //Puerto de la aplicacion 
 const port = process.env.PORT || 3000
-const host = process.env.HOST || 'localhost'
+//const host = process.env.HOST || 'localhost'
 
 
 //Rutas de la api 
@@ -35,7 +35,7 @@ app.use('/api',apiRoutes);
 app.use(router);
 
 //Arrancar servidor
-app.listen(process.env.PORT || 3000);
+app.listen(port);
 console.log("Servidor corriendo en el puerto: "+port);
 
 
